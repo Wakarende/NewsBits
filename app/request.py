@@ -82,7 +82,7 @@ def process_stories(stories_list):
   stories_results = []
 
   for stories_item in stories_list:
-    id = stories_item.get('id')
+    name = stories_item.get('name')
     author = stories_item.get('author')
     title = stories_item.get('title')
     url = stories_item.get('url')

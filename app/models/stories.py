@@ -2,8 +2,8 @@ class Stories:
   """
   Article class to define Top Stories object
   """
-  def __init__(self, id, author, title, url, description, publishedAt, image):
-    self.id = id
+  def __init__(self, name, author, title, url, description, publishedAt, image):
+    self.name = name
     self.author = author
     self.title = title
     self.description = description
