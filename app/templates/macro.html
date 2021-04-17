@@ -1,7 +1,24 @@
 {% macro displayArticleSourceList(article_list) %}
-  {% for article in article_list %} 
-    <li>{{article.name}}</li>
-    <li>{{article.description}}</li>
-    <li>{{article.category}}</li>
+  {% for article in article_list %}
+    <h3><a href="{{article.url}}">{{article.name}}</a></h3>
+    <p>{{article.description}}</p>
+    <button>{{article.category}}</button>
+    <p><a href="article/{{article.id}}">View Top Articles</a></p><br>
   {% endfor %} 
 {% endmacro %}
+
+{% macro displayStories(stories_list) %} 
+{% for stories in stories_list %}
+<div class="col-md-4">
+  <div class="card">
+    <img src="{{stories.url}}" alt="" class="img-responsive" alt="article image">
+  <div class="card-body">
+    <h4 class="card-text">{{stories.title}}</h4>
+    <p>Published on: {{stories.publishedAt}}</p>
+    <a href="{{stories.url}}" class="card-link">Read Article</a>
+  </div>
+  </div>
+</div>
+{% endfor %} 
+{% endmacro %} 
+
