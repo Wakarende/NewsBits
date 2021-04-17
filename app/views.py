@@ -8,11 +8,15 @@ def index():
   """
   View root page function that returns the index page and its data
   """
-  sport_articles = get_articles('sports')
-  print(sport_articles)
+  # sport_sources = get_articles('sports')
+  # business_sources = get_articles('business')
+  # technology_sources = get_articles('technology')
+  general_sources = get_articles('general')
+  # entertainment_sources = get_articles('entertainment')
   title = "NewsBits"
-  return render_template('index.html', title=title, sports = sport_articles)
 
+  return render_template('index.html',  general = general_sources)
+ 
 @app.route('/sources/<int:sources_id>')
 def articles(sources_id):
   """

@@ -1,3 +1,4 @@
+{% import 'macro.html' as macro %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +11,29 @@
 </head>
 <body>
   <!-- Sport sources section -->
-  <h3> Sources</h3>
+  <!-- <h3> Sports</h3>
     <ul>
-      {% for sport_articles in sports %}
-        <li>{{ sport_articles.name }}</li>
-        <li> <a href="{{ sport_articles.url }}">Go</a></li>
-      {% endfor %}
-    </ul>
+        {{ macro.displayArticleSourceList(sports)}}
+        </ul> -->
+    <!-- Business sources section -->
+  <!-- <h3> Business</h3>
+    <ul>
+      {{ macro.displayArticleSourceList(business)}}
+        </ul> -->
+    <!-- Technology sources section -->
+  <!-- <h3> Technology</h3>
+    <ul>
+      {{ macro.displayArticleSourceList(technology)}}
+    </ul> -->
+    <!-- General sources section -->
+  <h3>Article Sources</h3>
+    <ul>
+      {{ macro.displayArticleSourceList(general)}}
+    </ul> 
+     <!-- Entertainment sources section
+  <h3>Entertainment</h3>
+    <ul>
+      {{ macro.displayArticleSourceList(entertainment)}}
+    </ul> -->
 </body>
 </html>

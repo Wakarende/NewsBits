@@ -1,1 +1,7 @@
 {% macro displayArticleSourceList(article_list) %}
+  {% for article in article_list %} 
+    <li>{{article.name}}</li>
+    <li>{{article.description}}</li>
+    <li>{{article.category}}</li>
+  {% endfor %} 
+{% endmacro %}
