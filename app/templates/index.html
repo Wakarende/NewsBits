@@ -9,6 +9,13 @@
   {% endif %}
 </head>
 <body>
-  
+  <!-- Sport sources section -->
+  <h3> Sources</h3>
+    <ul>
+      {% for sport_articles in sports %}
+        <li>{{ sport_articles.name }}</li>
+        <li> <a href="{{ sport_articles.url }}">Go</a></li>
+      {% endfor %}
+    </ul>
 </body>
 </html>
