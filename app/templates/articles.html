@@ -8,12 +8,14 @@
     <!-- Content block -->
     {% block content %}
     <div class="container">
-    {% for articles_item in articles %}
+    {% for article in articles %}
       <div class="col-md-4">
-          <img src="{{articles_item.image}}" alt="" class="img-responsive" alt="article image">
-          <h4 class="card-text">{{articles_item.title}}</h4>
-          <p>Published on: {{articles_item.publishedAt}}</p>
-          <a href="{{articles_item.url}}" class="card-link">Read Article</a>
+          <img src="{{article.image}}" alt="" class="img-responsive" alt="article image">
+          <h4>{{article.title}}</h4>
+          <p>{{article.author}}</p>
+          <p>{{article.description}}</p>
+          <p>Published on: {{article.publishedAt}}</p>
+          <a href="{{article.url}}" class="card-link">Read Article</a>
       </div>
     {% endfor %} 
     </div>

@@ -1,13 +1,11 @@
-{% macro displayArticleSourceList(category) %}
-  {% for general_sources in category %}
-  <!-- <div class="row"> -->
+{% macro displayArticleSourceList(source_list) %}
+  {% for source in source_list %}
   <div class="col-md-4">
-      <h3><a href="{{general_sources.url}}">{{general_sources.name}}</a></h3>
-      <p>{{general_sources.description}}</p>
-      <span>{{general_sources.category}}</span>
-      <p><a href="/articles/{{general_sources.id}}" class="card-link">View Top Articles</a></p><br>
+      <h3><a href="{{source.url}}">{{source.name}}</a></h3>
+      <p>{{source.description}}</p>
+      <span>{{source.category}}</span>
+      <p><a href="/articles/{{source.id}}" class="card-link">View Top Articles</a></p><br>
   </div>
-  <!-- </div> -->
   {% endfor %} 
 {% endmacro %}
 
