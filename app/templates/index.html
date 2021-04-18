@@ -4,11 +4,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  {% if title %}
+  <!-- {% if title %}
   <title> {{ title }}</title>
   {% else %}
   <title> NewsBits </title>
-  {% endif %}
+  {% endif %} -->
   <!-- Styles block -->
 {% block styles%}
     {{ super() }}
@@ -19,27 +19,28 @@
 <body>
   {% block content %}
 <!-- General sources section -->
-  <h3>Article Sources</h3>
+    <h3 class="text-center">Article Sources</h3>
     <ul>
       {{ macro.displayArticleSourceList(general)}}
     </ul> 
 <!-- Sport sources section -->
-  <h3> Sports</h3>
+  <h3 class="text-center"> Sports</h3>
     <ul>
         {{ macro.displayArticleSourceList(sports)}}
         </ul>
 <!-- Business sources section -->
-  <h3> Business</h3>
+
+  <h3 class="text-center"> Business</h3>
     <ul>
       {{ macro.displayArticleSourceList(business)}}
-        </ul>
+        </ul> 
     <!-- Technology sources section -->
-  <h3> Technology</h3>
+  <h3 class="text-center"> Technology</h3>
     <ul>
       {{ macro.displayArticleSourceList(technology)}}
     </ul>
  <!-- Entertainment sources section -->
-  <h3>Entertainment</h3>
+   <h3 class="text-center">Entertainment</h3>
     <ul>
       {{ macro.displayArticleSourceList(entertainment)}}
     </ul>

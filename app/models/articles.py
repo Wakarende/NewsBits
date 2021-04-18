@@ -1,8 +1,9 @@
-class Stories:
+class Articles:
   """
   Article class to define Top Stories object
   """
-  def __init__(self, name, author, title, url, description, publishedAt, image):
+  def __init__(self, id, name, author, title, url, description, publishedAt, image,content):
+    self.id = id
     self.name = name
     self.author = author
     self.title = title
@@ -10,6 +11,7 @@ class Stories:
     self.url = url
     self.publishedAt = publishedAt
     self.image = image
+    self.content = content
     
   # @classmethod
   # def disp_stories(cls,id):

@@ -1,4 +1,4 @@
-class Article:
+class Sources:
   """
   Article class to define article source objects
   """

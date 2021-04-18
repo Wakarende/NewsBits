@@ -1,27 +1,22 @@
 {% extends 'base.html'%}
-<!-- Content block -->
-{% block content %}
-<!-- Stories background -->
-<!-- <div class="container"> -->
-  <!-- <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <h3>{{article.name}}</h3>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+  </head>
+  <body>
+    <!-- Content block -->
+    {% block content %}
+    <div class="container">
+    {% for articles_item in articles %}
+      <div class="col-md-4">
+          <img src="{{articles_item.image}}" alt="" class="img-responsive" alt="article image">
+          <h4 class="card-text">{{articles_item.title}}</h4>
+          <p>Published on: {{articles_item.publishedAt}}</p>
+          <a href="{{articles_item.url}}" class="card-link">Read Article</a>
+      </div>
+    {% endfor %} 
     </div>
-
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <h3>{{ article.description }}</h3>
-      <p class="category"> {{ article.category }}</p>
-      <p class="ratings"> <b> {{ article.language }}</b> - <i>{{ movie.vote_count}} votes </i> </p>
-    </div>
-  </div>
-</div> -->
-<div class="container">
-  {{ macro.displayStories(stories) }}
-</div>
-
-
-{% endblock %}
-<body>
-  
-</body>
+    {% endblock %}
+  </body>
 </html>
