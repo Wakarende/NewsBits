@@ -31,7 +31,7 @@ def get_sources(category):
 
     if get_sources_response['sources']:
       source_results_list = get_sources_response['sources']
-      source_results = process_results(source_results_list)
+      source_results = process_sources_results(source_results_list)
 
   return source_results
 
@@ -47,7 +47,7 @@ def process_sources_results(source_list):
   """
   source_results = []
   for source_item in source_list:
-    id = source_item.get('id')
+    id= source_item.get('id')
     name = source_item.get('name')
     description = source_item.get('description')
     url = source_item.get('url')
@@ -60,11 +60,11 @@ def process_sources_results(source_list):
 
   return source_results
 
-def get_articles(id):
+def get_articles(source_id):
   """
   Function that returns the top stories for each news source
   """
-  get_articles_url = articles_url.format(id, apiKey)
+  get_articles_url = articles_url.format(source_id, apiKey)
   
   with urllib.request.urlopen(get_articles_url) as url:
     get_articles_data = url.read()
@@ -85,7 +85,7 @@ def process_article_results(articles_list):
   articles_results = []
 
   for article_item in articles_list:
-    id = article_item.get('id')
+    source_id= article_item.get('source_id')
     name = article_item.get('name')
     author = article_item.get('author')
     title = article_item.get('title')
@@ -96,8 +96,8 @@ def process_article_results(articles_list):
     content = article_item.get('content')
 
     if image:
-      article_object = Articles(id, name, author,title,url,description,publishedAt,image, content)
+      article_object = Articles(source_id, name, author,title,url,description,publishedAt,image, content)
       articles_results.append(article_object)
 
-  print(articles_results)
+  # print(articles_results)
   return articles_results

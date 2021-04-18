@@ -18,14 +18,14 @@ def index():
 
   return render_template('index.html', title=title, general = general_sources)
  
-@main.route('/articles/<id>')
-def newsarticles(id):
+@main.route('/articles/<source_id>')
+def articles(source_id):
   """
   View top stories page function and returns
   top stories 
   """
-  title = f'{id}'
-  articles_items = get_articles(id)
+  title = f'{source_id}'
+  articles_items = get_articles(source_id)
 
 
-  return render_template('articles.html',title = title, articles= articles_items)
+  return render_template('articles.html',title = title, articles= articles_items, name = source_id)

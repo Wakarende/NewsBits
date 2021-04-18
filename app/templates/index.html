@@ -10,47 +10,18 @@
   <title> NewsBits </title>
   {% endif %} -->
   <!-- Styles block -->
-{% block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-{% endblock %}
 <!-- Content block -->
 </head>
 <body>
-  {% block content %}
-<!-- General sources section -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h3 class="text-center">Article Sources</h3>
-        <ul>
-          {{ macro.displayArticleSourceList(general)}}
-        </ul> 
-      </div>
-    </div>
-  </div>
-    
-<!-- Sport sources section -->
-  <!-- <h3 class="text-center"> Sports</h3>
-    <ul>
-        {{ macro.displayArticleSourceList(sports)}}
-        </ul> -->
-<!-- Business sources section -->
+{% block content %}
+<div class="container">
+  <h3 class="text-center">News Sources</h3>
+    {{ macro.displayArticleSourceList(general)}}         
+</div>
 
-  <!-- <h3 class="text-center"> Business</h3>
-    <ul>
-      {{ macro.displayArticleSourceList(business)}}
-        </ul>  -->
-    <!-- Technology sources section -->
-  <!-- <h3 class="text-center"> Technology</h3>
-    <ul>
-      {{ macro.displayArticleSourceList(technology)}}
-    </ul> -->
- <!-- Entertainment sources section -->
-   <!-- <h3 class="text-center">Entertainment</h3>
-    <ul>
-      {{ macro.displayArticleSourceList(entertainment)}}
-    </ul> -->
-  {% endblock%}
+
+
+ 
+{% endblock%}
 </body>
 </html>
