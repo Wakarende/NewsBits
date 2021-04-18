@@ -13,10 +13,15 @@ class Articles:
     self.image = image
     self.content = content
     
-  # @classmethod
-  # def disp_stories(cls,id):
-
-  #   response = []
-
-  #   for stories in
-
+class Sources:
+  """
+  Article class to define article source objects
+  """
+  def __init__(self,id,name,description,url,category,language,country):
+    self.id = id
+    self.name = name
+    self.description = description
+    self.url = url
+    self.category = category
+    self.language = language
+    self.country = country

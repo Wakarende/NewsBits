@@ -19,31 +19,38 @@
 <body>
   {% block content %}
 <!-- General sources section -->
-    <h3 class="text-center">Article Sources</h3>
-    <ul>
-      {{ macro.displayArticleSourceList(general)}}
-    </ul> 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="text-center">Article Sources</h3>
+        <ul>
+          {{ macro.displayArticleSourceList(general)}}
+        </ul> 
+      </div>
+    </div>
+  </div>
+    
 <!-- Sport sources section -->
-  <h3 class="text-center"> Sports</h3>
+  <!-- <h3 class="text-center"> Sports</h3>
     <ul>
         {{ macro.displayArticleSourceList(sports)}}
-        </ul>
+        </ul> -->
 <!-- Business sources section -->
 
-  <h3 class="text-center"> Business</h3>
+  <!-- <h3 class="text-center"> Business</h3>
     <ul>
       {{ macro.displayArticleSourceList(business)}}
-        </ul> 
+        </ul>  -->
     <!-- Technology sources section -->
-  <h3 class="text-center"> Technology</h3>
+  <!-- <h3 class="text-center"> Technology</h3>
     <ul>
       {{ macro.displayArticleSourceList(technology)}}
-    </ul>
+    </ul> -->
  <!-- Entertainment sources section -->
-   <h3 class="text-center">Entertainment</h3>
+   <!-- <h3 class="text-center">Entertainment</h3>
     <ul>
       {{ macro.displayArticleSourceList(entertainment)}}
-    </ul>
+    </ul> -->
   {% endblock%}
 </body>
 </html>

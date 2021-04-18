@@ -1,18 +1,21 @@
-from app import app
 import urllib.request, json
-from .models import sources,articles
+from .models import Sources, Articles
 
-Articles = articles.Articles
-Sources = sources.Sources
 
-#Getting api key
-apiKey = app.config['NEWS_API_KEY']
+apiKey = None
+base_url = None
+articles_url = None
 
-#Getting the article sources base url
-base_url = app.config["NEWS_API_BASE_URL"]
+def configure_request(app):
+  global apiKey,base_url,articles_url
+  #Getting api key
+  apiKey = app.config['NEWS_API_KEY']
 
-#Getting the top articles from specific article source
-articles_url = app.config['NEWS_API_TOP_STORIES_URL']
+  #Getting the article sources base url
+  base_url = app.config["NEWS_API_BASE_URL"]
+
+  #Getting the top articles from specific article source
+  articles_url = app.config["NEWS_API_TOP_STORIES_URL"]
 
 def get_sources(category):
   """
@@ -32,7 +35,7 @@ def get_sources(category):
 
   return source_results
 
-def process_results(source_list):
+def process_sources_results(source_list):
   """
   Function that processes the article-sources result and transforms them to a list of Objects
 
