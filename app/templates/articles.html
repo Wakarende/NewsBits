@@ -1,5 +1,5 @@
 {% extends 'base.html'%}
-{% import 'macro.html' as macro %}
+<!-- {% import 'macro.html' as macro %} -->
 <!-- {% import 'macro.html' as macro %}  -->
 <html>
   <head>
@@ -9,22 +9,27 @@
   </head>
   <body>
     <!-- Content block -->
-    {% block content %}
-      <!-- {% for article in articles %}
-            <img class="fadeInUp details" src="{{article.image}}" width="100%">
-            <p><strong>{{ article.title }}</strong></p><hr>
-            <p>{{ article.description }}</p>
-              <p><em>{{article.content}}</em></p>
-              <p class="font-weight-normal">by {{article.author}}</p>
-                <p>Posted on: {{article.publishedAt[:10]}}</p>
-              <p><a href="{{ article.url }}">Go to full story</a></p>
-      {% endfor %} -->
-      <div class="container">
-         <ul>
-        {{ macro.displayArticles(article)}}
-      </ul>
+{% block content %}
+ {% for articles_item in articles%}
+      <div class="col-md-4">
+        <img class="fadeInUp details" src="{{articles_item.urlToImage}}"  width="100%">
+        <p><strong>{{ articles_item.title }}</strong></p>
+        <hr>
+        <div id="content-details">
+          <p><em>{{articles_item.content}}</em></p>
+        </div>
+        <div class="animated fadeInUp details">
+          {%if articles_item.author%}
+            <p class="font-weight-normal">{{articles_item.author}}.
+            </p>
+          {%endif%}
+          <!-- {%if articles_item.publishedAt%}
+            <p>Posted on: {{articles_item.publishedAt}}</p>
+          {%endif%} -->
+            <p><a href="{{ articles_item.url }}">Go to full story</a></p>
+        </div>  
       </div>
-     
-    {% endblock %}
+  {% endfor %}
+{% endblock %}  
   </body>
 </html>

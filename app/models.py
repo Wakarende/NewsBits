@@ -2,17 +2,17 @@ class Articles:
   """
   Article class to define Top Stories object
   """
-  def __init__(self, id, name, author, title, url, description, publishedAt, image,content):
-    self.id = id
-    self.name = name
+  def __init__(self, id, author, title, url, publishedAt, urlToImage,content ):
     self.author = author
     self.title = title
-    self.description = description
+    # self.description = description
+    self.id = id
     self.url = url
     self.publishedAt = publishedAt
-    self.image = image
+    self.urlToImage = urlToImage
     self.content = content
     
+
 class Sources:
   """
   Article class to define article source objects
