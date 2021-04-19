@@ -6,36 +6,33 @@
   </head>
   <body>
     <!-- Content block -->
-  {% block content %}
+{% block content %}
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-md-6">
-      {% for article_item in articles%}
-        <div class="card shadow p-3 mb-5 bg-white rounded card quote-card" style = "width:40rem; height: 40rem;">
-          <a href="{{article_item.url}}">
-            <img  src="{{article_item.publishedAt}}"  alt="article-img" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <h4 class="card-title">{{ article_item.title }}</h4>
-            <hr>
-            <p>By: {{article_item.author}}</p>
-            <p>Published on: {{article_item.urlToImage}}</p>
-            <div id="content-details">
-              <p>{{article_item.content}}</p>
-              <p>
-              <a href="{{article_item.url}}">Read More</a>
-            </p>
+        {% for article_item in articles%}
+          <div class="card shadow p-3 mb-5 bg-white rounded card quote-card" style = "width:40rem; height: 40rem;">
+            <a href="{{article_item.url}}">
+              <img  src="{{article_item.publishedAt}}"  alt="article-img" class="card-img-top">
+            </a>
+            <div class="card-body">
+              <h4 class="card-title">{{ article_item.title }}</h4>
+              <hr>
+              <p>By: {{article_item.author}}</p>
+              <p>Published on: {{article_item.urlToImage}}</p>
+              <div id="content-details">
+                <p>{{article_item.content}}</p>
+                <p>
+                <a href="{{article_item.url}}">Read More</a>
+              </p>
+              </div>
             </div>
-          </div>
+        {% endfor %}  
+          </div> 
       </div>
     </div>
   </div>
-    
-      {% endfor %}  
-    </div>
-  
-      
-  {% endblock %}  
+{% endblock %}  
   </body>
 </html>
 

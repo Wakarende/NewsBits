@@ -4,13 +4,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- {% if title %}
-  <title> {{ title }}</title>
-  {% else %}
-  <title> NewsBits </title>
-  {% endif %} -->
-  <!-- Styles block -->
-<!-- Content block -->
 </head>
 <body>
 {% block content %}
@@ -18,10 +11,34 @@
   <h3 class="text-center">News Sources</h3>
     {{ macro.displayArticleSourceList(general)}}         
 </div>
-
-
-
- 
+<footer > 
+    <div class="footer sticky-bottom" style="background-color:#191414; padding: 10px;">
+      <div class="container">
+          <div class="footer-contact" style="color: white;">
+            <h5>NewsBits</h5>
+            <hr>
+            <i class="bi-footer bi-telephone-fill"></i>
+            <span>+254712345678<span>
+            <br>
+            <i class="bi-footer bi-envelope-fill"></i>
+            <span>haki@info.co.ke</span>
+            <br>
+            <i class="bi-footer bi-geo-alt"></i>
+            <span>Ngong Lane, Nairobi.</span>
+            <div class="social-media">
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-linkedin"></i>
+          </div>
+          <div class="copy">
+            &copy; NewsBits 2021. All Rights Reserved.
+          </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </footer> 
 {% endblock%}
 </body>
 </html>
