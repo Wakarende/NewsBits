@@ -2,11 +2,10 @@ class Articles:
   """
   Article class to define Top Stories object
   """
-  def __init__(self, id, author, title, url, publishedAt, urlToImage,content ):
+  def __init__(self,author, title, url, publishedAt, urlToImage,description,content):
     self.author = author
     self.title = title
-    # self.description = description
-    self.id = id
+    self.description = description
     self.url = url
     self.publishedAt = publishedAt
     self.urlToImage = urlToImage
