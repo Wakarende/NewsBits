@@ -4,33 +4,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" type="text/css">
+{% endblock %}
 </head>
 <body>
 {% block content %}
 <div class="container">
-  <h3 class="text-center">News Sources</h3>
+  <h3 class="text-center source-title" style="font-size: 40px; margin-top: 40px; color:#191414;">News Sources</h3><hr>
     {{ macro.displayArticleSourceList(general)}}         
 </div>
 <footer > 
     <div class="footer sticky-bottom" style="background-color:#191414; padding: 10px;">
       <div class="container">
           <div class="footer-contact" style="color: white;">
-            <h5>NewsBits</h5>
-            <hr>
-            <i class="bi-footer bi-telephone-fill"></i>
-            <span>+254712345678<span>
+            <h5 style="font-size: 16px;">NewsBits</h5>
+            <hr style="color: #1DB954;">
+            <i class="bi-footer bi-telephone-fill" style="font-size: 15px; color: #1DB954; margin-right: 10px;"></i>
+            <span style="font-size: 11px;">+254712345678<span>
             <br>
-            <i class="bi-footer bi-envelope-fill"></i>
-            <span>haki@info.co.ke</span>
+            <i class="bi-footer bi-envelope-fill" style="font-size: 15px; color: #1DB954; margin-right: 10px;"></i>
+            <span style="font-size: 11px;"">haki@info.co.ke</span>
             <br>
-            <i class="bi-footer bi-geo-alt"></i>
-            <span>Ngong Lane, Nairobi.</span>
-            <div class="social-media">
-            <i class="bi bi-twitter"></i>
-            <i class="bi bi-facebook"></i>
-            <i class="bi bi-linkedin"></i>
+            <i class="bi-footer bi-geo-alt" style="font-size: 15px; color: #1DB954; margin-right: 10px;"></i>
+            <span style="font-size: 11px;">Ngong Lane, Nairobi.</span>
+            <div class="social-media mt-2" style="display: flex; column-gap: 10px;">
+            <i class="bi bi-twitter" style="font-size: 15px; color: #1DB954;"></i>
+            <i class="bi bi-facebook" style="font-size: 15px; color: #1DB954;"></i>
+            <i class="bi bi-linkedin " style="font-size: 15px; color: #1DB954;"></i>
           </div>
-          <div class="copy">
+          <div class="copy text-center">
             &copy; NewsBits 2021. All Rights Reserved.
           </div>
           </div>
